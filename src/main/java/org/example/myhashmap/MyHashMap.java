@@ -54,6 +54,14 @@ public class MyHashMap {
   }
 
   public String get(String key) {
+    int cell = key.hashCode() % pairs.length;
+    if (pairs[cell] != null) {
+      for (Pair p : pairs[cell]) {
+        if (p.key.equals(key)) {
+          return p.value;
+        }
+      }
+    }
     return null;
   }
 

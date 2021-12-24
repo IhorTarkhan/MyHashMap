@@ -22,5 +22,9 @@ public class Main {
     myHashMap.add("bbb", "aa");
     myHashMap.add("ccc", "aaa");
     System.out.println(myHashMap.size());
+    System.out.println(myHashMap.get("aaa"));
+    System.out.println(myHashMap.get("bbb"));
+    System.out.println(myHashMap.get("ccc"));
+    System.out.println(myHashMap.get("ddd"));
   }
 }
