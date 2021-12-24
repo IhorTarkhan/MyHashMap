@@ -4,7 +4,10 @@ import java.util.HashMap;
 
 public class Main {
   public static void main(String[] args) {
-    main2();
+    System.out.println(TestI.AAA.getShort());
+    System.out.println(TestI.BBB.getShort());
+    System.out.println(TestI.CCC.getShort());
+    System.out.println(TestI.AAA.getShort());
   }
 
   public static void main1() {
