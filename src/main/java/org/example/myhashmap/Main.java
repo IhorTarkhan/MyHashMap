@@ -26,5 +26,7 @@ public class Main {
     System.out.println(myHashMap.get("bbb"));
     System.out.println(myHashMap.get("ccc"));
     System.out.println(myHashMap.get("ddd"));
+    myHashMap.remove("ccc");
+    System.out.println(myHashMap.get("ccc"));
   }
 }

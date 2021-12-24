@@ -65,6 +65,17 @@ public class MyHashMap {
     return null;
   }
 
+  public void remove(String key) {
+    int cell = key.hashCode() % pairs.length;
+    if (pairs[cell] != null) {
+      for (Pair p : pairs[cell]) {
+        if (p.key.equals(key)) {
+          pairs[cell].remove(p);
+        }
+      }
+    }
+  }
+
   static class Pair {
     String key;
     String value;
