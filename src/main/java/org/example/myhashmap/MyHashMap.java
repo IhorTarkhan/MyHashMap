@@ -1,6 +1,6 @@
 package org.example.myhashmap;
 
-import java.util.LinkedList;
+import java.util.*;
 
 public class MyHashMap {
   private LinkedList<Pair>[] pairs;
@@ -12,7 +12,7 @@ public class MyHashMap {
   }
 
   public MyHashMap() {
-    this.pairs = new LinkedList[10];
+    this.pairs = new LinkedList[5];
   }
 
   public void add(String key, String value) {
@@ -34,12 +34,27 @@ public class MyHashMap {
   }
 
   private LinkedList<Pair>[] reorder() {
-    // ToDo implement
-    return null;
+    LinkedList<Pair>[] newPairs = new LinkedList[pairs.length * 2];
+    List<Pair> pairs =
+        Arrays.stream(this.pairs).filter(Objects::nonNull).flatMap(Collection::stream).toList();
+
+    for (Pair newPair : pairs) {
+      int newCell = newPair.hashCode() % newPairs.length;
+      if (newPairs[newCell] == null) {
+        newPairs[newCell] = new LinkedList<>();
+      }
+      newPairs[newCell].add(newPair);
+    }
+
+    return newPairs;
   }
 
   public int size() {
     return fill;
+  }
+
+  public String get(String key) {
+    return null;
   }
 
   static class Pair {
